@@ -9,12 +9,14 @@ import jakarta.persistence.Id;
 
 public class ProductEntity {
 
-    String name;
-    Double price;
-    int quantity;
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
+
+    private Long productId;
+    private String name;
+    private double price;
+    private int quantity;
 
     public void setName(String name) {
         this.name = name;
@@ -40,6 +42,11 @@ public class ProductEntity {
     public Long getId() {
         return id;
     }
-
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
+    public Long getProductId() {
+        return productId;
+    }
 
 }
