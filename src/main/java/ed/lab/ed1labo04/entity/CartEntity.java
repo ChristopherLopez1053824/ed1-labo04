@@ -7,10 +7,10 @@ import java.util.List;
 public class CartEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<CartItemEntity> cartItems;
 
     private double totalPrice;
